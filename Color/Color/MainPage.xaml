@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Color"
+             x:Class="Color.MainPage">
+
+    <StackLayout >
+
+        <Frame  Padding="10" Margin="2" BackgroundColor="WhiteSmoke" >
+            <StackLayout Orientation="Horizontal">
+                <Image Source="kigamesApp.png" WidthRequest="125" HeightRequest="50"  />
+                <Button x:Name="btnChange" Clicked="btnChange_Clicked" 
+			Text="random" BackgroundColor="Transparent" 
+			BorderColor="Black" BorderWidth="1.5" 
+			CornerRadius="10" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+
+
+        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceAround" VerticalOptions="FillAndExpand">
+
+
+            <Frame BackgroundColor="WhiteSmoke" BorderColor="WhiteSmoke" WidthRequest="250" CornerRadius="10" >
+                <StackLayout>
+                    <Label Text="code" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextTransform="Uppercase" Margin="5"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Decimal" FontSize="Small" VerticalOptions="End"/>
+                        <Label x:Name="decimalCode" Text="" TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Medium"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Hexadecimal" FontSize="Small" VerticalOptions="End"/>
+                        <Label x:Name="hexadecimalCode" Text="#253695" 
+				TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Medium"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <BoxView  x:Name="boxColor" HorizontalOptions="Center" WidthRequest="300" HeightRequest="200" CornerRadius="20" />
+
+            <StackLayout>
+                <StackLayout x:Name="slideStackLayout" IsVisible="true" HorizontalOptions="Center" Margin="20">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView x:Name="boxRed" WidthRequest="25"  HeightRequest="25" CornerRadius="50"/>
+                        <Slider  x:Name="slideRed" ValueChanged="slideColor" Minimum="0" Maximum="255" 
+				WidthRequest="200" ThumbColor="red" MinimumTrackColor="Black" MaximumTrackColor="Black"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView x:Name="boxGreen" WidthRequest="25"  HeightRequest="25" CornerRadius="50" />
+                        <Slider  x:Name="slideGreen" ValueChanged="slideColor" Minimum="0" Maximum="255" 
+				WidthRequest="200" ThumbColor="LightGreen" MinimumTrackColor="Black" MaximumTrackColor="Black"  />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView x:Name="boxBlue" WidthRequest="25"  HeightRequest="25" CornerRadius="50"/>
+                        <Slider x:Name="slideBlue" ValueChanged="slideColor" Minimum="0" Maximum="255" 
+				WidthRequest="200" ThumbColor="LightBlue" MinimumTrackColor="Black" MaximumTrackColor="Black" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout x:Name="randomStackLayout" IsVisible="false">
+                    <Button x:Name="btnChangeColorRandom" Clicked="btnChangeColorRandom_Clicked" Text="random color" 
+				BackgroundColor="Transparent" BorderWidth="1.5" BorderColor="Black" CornerRadius="10"  />
+                </StackLayout>
+            </StackLayout>
+
+
+        </FlexLayout>
+    </StackLayout>
+
+
+</ContentPage>
